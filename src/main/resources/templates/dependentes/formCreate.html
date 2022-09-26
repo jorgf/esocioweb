@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.or">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar dependente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+	<div class="col-6 align-items-center ms-5 ">
+		<div class="ms-4 mt-4">
+			<h2>Cadastrar novo dependente</h2>
+		</div>
+		<form action="/dependentes" method="post">
+			<div class="ms-4">
+				<label for="nome" class="form-label">Nome</label> <input type="text"
+					name="nome" class="form-control" id="nome" placeholder="nome">
+			</div>
+
+			<div class="align-items-center ms-4">
+				<label for="idade" class="form-label">Idade</label> <input
+					type="text" name="idade" class="form-control" id="idade"
+					placeholder="ex.:20">
+			</div>
+
+			<div class="align-items-center ms-4">
+				<label for="socioResponsavel" class="form-label">Sócio
+					responsável </label> <input type="text" name="socioResponsavel"
+					class="form-control" id="socioResponsavel"
+					placeholder=" id do sócio responsável">
+			</div>
+			<button type="submit" class="btn btn-primary mt-4 ms-4">Salvar</button>
+		</form>
+	</div>
+</body>
+</html>

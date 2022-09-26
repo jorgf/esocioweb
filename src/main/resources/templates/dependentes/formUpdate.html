@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.or">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SisGen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="ms-4">
+        <h1 class="text-center mt-4" >Editar Dependente #<span th:text="${dependenteId}"></span></h1>
+        <br>
+    </div>
+	
+	<div class="col-6 ms-5 ">
+		<form th:object="${RequestDependente}" th:action="@{/dependentes/{id}(id=${dependenteId})}" method="post">
+			<div class="ms-4">
+				<label for="nome" class="form-label">Nome</label> 
+				<input type="text" name="nome" class="form-control" id="nome" th:field="*{nome}">
+			</div>
+			<div class="align-items-center ms-4">
+				<label for="idade" class="form-label">Idade</label> 
+				<input type="text" name="idade" class="form-control" id="idade" th:field="*{idade}">
+			</div>
+			<div class="align-items-center ms-4">
+				<label for="socioResponsavel" class="form-label">Sócio Responsável</label> 
+				<input type="text" name="renda" class="form-control" id="socioResponsavel" th:field="*{socioResponsavel}">
+			</div>
+			<button type="submit" class="btn btn-primary mt-4 ms-4">Salvar</button>
+		</form>
+	</div>
+</body>
+</html>
+    
