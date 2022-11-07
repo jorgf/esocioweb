@@ -1,6 +1,6 @@
 # Projeto de gerenciamento de sócios e dependentes
 ---
-Projeto web (front e back) desenvolvido como teste para seleção na empesa NPI
+Projeto web (front e back)
 
 
 ## Tecnologias/Linguagens utilizadas
