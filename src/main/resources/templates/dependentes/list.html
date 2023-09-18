@@ -37,14 +37,14 @@
 	    		<th>Id</th>
 	    		<th>Nome</th>
 	    		<th>Idade</th>
-	    		<th>Id sócio responsável</th>
+	    		<th>Nome do sócio responsável</th>
 	    		<th> </th>
 	  		</tr>
 			<tr th:each="dependente : ${dependentes}">
 				<td th:text="${dependente.getId()}"></td>
 				<td th:text="${dependente.nome}"></td>
 				<td th:text="${dependente.idade}"></td>
-				<td th:text="${dependente.socioResponsavel}"></td>
+				<td th:text ="${dependente.socio.nome}"></td>
 				<td>
 					<a th:href="@{/dependentes/{id}/edit(id=${dependente.id})}">
 						<i class="bi bi-pencil"></i>
