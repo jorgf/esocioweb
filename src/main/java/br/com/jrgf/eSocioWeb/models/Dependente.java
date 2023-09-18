@@ -4,24 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Dependente {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	@NotBlank
 	@Size(min = 5, max = 50)
 	private String nome;
 	@Min(0)
 	private Integer idade;
-	@NotNull
-	private Integer idSocioResponsavel;
-	
+	@JoinColumn(name="socio_id")
+	@ManyToOne
+	private Socio socio;
+
 	public Dependente(){ }
 	
 	public Integer getId() {
@@ -43,13 +45,11 @@ public class Dependente {
 		this.idade = idade;
 	}
 
-	public Integer getSocioResponsavel() {
-		return idSocioResponsavel;
+	public Socio getSocio() {
+		return socio;
 	}
 
-	public void setSocioResponsavel(Integer socioId) {
-		this.idSocioResponsavel = socioId;
+	public void setSocio(Socio socio) {
+		this.socio = socio;
 	}
-	
-	
 }
