@@ -84,7 +84,7 @@ public class DependenteCtrl {
 			Dependente dependente = optional.get();
 			dependente.setNome(req.getNome());
 			dependente.setIdade(req.getIdade());
-			dependente.setSocioResponsavel(req.getSocioResponsavel());
+			// dependente.setSocioResponsavel(req.getSocioResponsavel());
 			this.dependenteRepository.save(dependente);
 			return "sucess";
 		}else {

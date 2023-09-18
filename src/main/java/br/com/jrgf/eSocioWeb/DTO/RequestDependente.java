@@ -1,12 +1,13 @@
 package br.com.jrgf.eSocioWeb.DTO;
 
 import br.com.jrgf.eSocioWeb.models.Dependente;
+import br.com.jrgf.eSocioWeb.models.Socio;
 
 public class RequestDependente {
 //	private Integer id;
 	private String Nome;
 	private Integer idade;
-	private Integer socioResponsavel;
+	private Socio socio;
 	
 //	public Integer getId() {
 //		return id;
@@ -26,11 +27,11 @@ public class RequestDependente {
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
-	public Integer getSocioResponsavel() {
-		return socioResponsavel;
+	public Socio getSocio() {
+		return socio;
 	}
-	public void setSocioResponsavel(Integer socioResponsavel) {
-		this.socioResponsavel = socioResponsavel;
+	public void setSocio(Socio socio) {
+		this.socio = socio;
 	}
 	
 	public Dependente getDependete() {
@@ -38,13 +39,13 @@ public class RequestDependente {
 //		dependente.setId(this.id);
 		dependente.setNome(this.Nome);
 		dependente.setIdade(this.idade);
-		dependente.setSocioResponsavel(this.socioResponsavel);
+		dependente.setSocio(this.socio);
 		return dependente;
 	}
 	
 	public void setDependente(Dependente dependente) {
 		this.Nome = dependente.getNome();
 		this.idade = dependente.getIdade();
-		this.socioResponsavel = dependente.getSocioResponsavel();
+		this.socio = dependente.getSocio();
 	}
 }
