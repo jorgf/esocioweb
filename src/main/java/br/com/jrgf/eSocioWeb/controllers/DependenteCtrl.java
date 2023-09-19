@@ -60,7 +60,7 @@ public class DependenteCtrl {
 		Optional<Dependente> optional = this.dependenteRepository.findById(id);
 		if(optional.isPresent()) {
 			this.dependenteRepository.deleteById(id);
-			return "sucess";
+			return "success";
 		} else {
 			return "error";
 		}
@@ -73,7 +73,7 @@ public class DependenteCtrl {
 			return "error";
 		} else {
 			this.dependenteRepository.save(reqDependente.getDependete());
-			return "sucess";			
+			return "success";			
 		}
 	}
 	
@@ -86,7 +86,7 @@ public class DependenteCtrl {
 			dependente.setIdade(req.getIdade());
 			// dependente.setSocioResponsavel(req.getSocioResponsavel());
 			this.dependenteRepository.save(dependente);
-			return "sucess";
+			return "success";
 		}else {
 			return "error";				
 		}

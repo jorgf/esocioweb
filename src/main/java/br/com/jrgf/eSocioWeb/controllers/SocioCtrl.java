@@ -60,7 +60,7 @@ public class SocioCtrl {
 		Optional<Socio> optional = this.socioRepository.findById(id);
 		if(optional.isPresent()) {
 			this.socioRepository.deleteById(id);
-			return "sucess";
+			return "success";
 		} else {
 			return "error";
 		}
@@ -72,7 +72,7 @@ public class SocioCtrl {
 			return "error";
 		} else {
 			this.socioRepository.save(reqSocio.getSocio());
-			return "sucess";			
+			return "success";			
 		}
 	}
 	
@@ -85,7 +85,7 @@ public class SocioCtrl {
 			socio.setAtivo(reqSocio.isAtivo());
 			socio.setRenda(reqSocio.getRenda());
 			this.socioRepository.save(socio);
-			return "sucess";
+			return "success";
 		}else {
 			return "error";				
 		}

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -36,6 +37,7 @@ public class SocioCtrlTest {
     }
 
     @Test
+    @DisplayName("Created Socio in database: success")
     public void createdSocioSuccess(){
         RequestSocio reqSocio = new RequestSocio();
         reqSocio.setAtivo(false);
@@ -46,9 +48,10 @@ public class SocioCtrlTest {
         BindingResult bindingResult = new BeanPropertyBindingResult(new Object(), "dummy");
         
         String socioSaved = socioCtrl.create(reqSocio, bindingResult);
-        assertEquals("sucess", socioSaved);
+        assertEquals("success", socioSaved);
     }
     @Test
+    @DisplayName("Created Socio in database: error value")
     public void createdSocioFailed(){
         RequestSocio reqSocio = new RequestSocio();
         reqSocio.setAtivo(false);
