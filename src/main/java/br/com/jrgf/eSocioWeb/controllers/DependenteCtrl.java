@@ -69,7 +69,6 @@ public class DependenteCtrl {
 	@PostMapping("") // salvar dados do form - criar um socio
 	public String create(@Valid RequestDependente reqDependente, BindingResult result) {
 		if(result.hasErrors()) {
-			System.out.println("::: TEM ERROS !! :::");
 			return "error";
 		} else {
 			this.dependenteRepository.save(reqDependente.getDependete());
@@ -84,7 +83,7 @@ public class DependenteCtrl {
 			Dependente dependente = optional.get();
 			dependente.setNome(req.getNome());
 			dependente.setIdade(req.getIdade());
-			// dependente.setSocioResponsavel(req.getSocioResponsavel());
+			dependente.setSocio(req.getSocio());
 			this.dependenteRepository.save(dependente);
 			return "success";
 		}else {
